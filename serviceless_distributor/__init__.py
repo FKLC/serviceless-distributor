@@ -73,13 +73,15 @@ class Distributor(metaclass=StaticProperties):
     _hostnames = socket.gethostbyname_ex(socket.gethostname())[-1]
 
     @staticmethod
-    def register_function(nodes: list = Distributor.nodes):
+    def register_function(nodes: list = None):
         """
         Parameters
         ----------
         nodes : list, optional
             Nodes to distribute
         """
+        if nodes is None:
+            nodes = Distributor.nodes
 
         def decorator(function):
             def distributed_function(*args, **kwargs):
