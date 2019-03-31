@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name="serviceless-distributor",
-    version="1.0.001",
+    version="1.0.101",
     packages=find_packages(),
     include_package_data=True,
     license="MIT License",
@@ -33,5 +33,5 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    install_requires=["requests"],
+    install_requires=["requests", "djangoless_signing"],
 )
